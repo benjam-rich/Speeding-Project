@@ -18,13 +18,55 @@
                         <div class="col-md-12">
                             <div class="single-blog-post">
                                 <div class="text-content">
-                                    <h2>Here is a place to enter data into the database</h2>
-                                    <span><a href="#">Please enter your data here</a>
+                                    <h2>Enter your ticket data into the database HERE</h2>
+                                    <span><a href="#">*please enter the data as accurately as possible</a>
                                     <p></p>
                                     <br><br>
-                                    We can put the form here
+                                    <form name="form" method="post" action="{% url 'storeDriver' %}">
+                                        {% csrf_token %}
+                                        <!-- <label for='fname'>Enter driver's first name:</label>
+                                        <input type="text" style="color:black" name='fname' id='fname'>
+                                        <br><br>
+                                        <label for='lname'>Enter driver's last name:</label>
+                                        <input type="text" style="color:black" name='lname' id='lname'> 
+                                        <br><br>     
+                                        <label for='homeTown'>Enter driver's hometown:</label>
+                                        <input type="text" style="color:black" name='homeTown' id='homeTown'>
+                                        <br><br> -->
+                                        <label for='fname'>Enter the driver's first name:</label>
+                                        <input type="text" style="color:black" name='fname' id='fname'>
+                                        <br><br>
+                                        <label for='lname'>Enter the driver's last name:</label>
+                                        <input type="text" style="color:black" name='lname' id='lname'>
+                                        <br><br>
+                                        <label for='date'>Enter the date of the ticket:</label>
+                                        <input type="date" style="color:black" name='date' id='date'>
+                                        <br><br>
+                                        <label for='amount'>Enter the amount of the ticket: $</label>
+                                        <input type="text" style="color:black" name='amount' id='amount'>
+                                        <br><br>
+                                        <label for='locationStreet'>Enter the street name the ticket was received on:</label>
+                                        <input type="text" style="color:black" name='locationStreet' id='locationStreet'>
+                                        <br><br>
+                                        <label for='locationCity'>Enter the city the ticket was recevied in:</label>
+                                        <input type="text" style="color:black" name='locationCity' id='locationCity'>
+                                        <br><br>
+                                        <label for='speedMPH'>Enter the car's top speed (MPH) prior to receiving the ticket:</label>
+                                        <input type="text" style="color:black" name='speedMPH' id='speedMPH'>
+                                        <br><br>
+                                        <!-- <label for='emp_state'>Select the state:</label>
+                                        <select name="emp_state">
+                                        {% for state_info in states %}
+                                            <option value="{{ state_info.state_abbrev }}">{{ state_info.state_description }}</option>
+                                        {% endfor %} </select>
+                                        <br><br>     
+                                        <label for='contact_info'>Enter the contact information:</label>
+                                        <input type="text" name='contact_info' id='contact_info'>  -->
+                                                                
+                                        <button type="submit" style="color:black;">Submit</button>
+                                        </form>
                                 	<br><br>
-                                    <br><br><a href="blog.html">Submit</a></p>
+                                    <!-- <br><br><a type="submit" >Submit</a></p> -->
                                    
                                 </div>
                             </div>

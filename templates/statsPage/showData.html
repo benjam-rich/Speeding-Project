@@ -5,7 +5,7 @@
     <div class="page-heading">
         <div class="container">
             <div class="heading-content">
-                <h1>Display<em> Data</em></h1>
+                <h1>See<em> Data</em></h1>
             </div>
         </div>
     </div>
@@ -18,13 +18,37 @@
                         <div class="col-md-12">
                             <div class="single-blog-post">
                                 <div class="text-content">
-                                    <h2>Here is a place to display the data</h2>
-                                    <span><a href="#">Please select what data you want to see here</a>
+                                    <!-- <h2>Here is a place to display the data</h2> -->
+                                    <span><a href="{% url 'enterData' %}">*Note, you must contribute to the database to see the data</a>
                                     <p></p>
-                                    <br><br>
-                                    We can put the display form here
-                                	<br><br>
-                                    <br><br><a href="blog.html">Submit</a></p>
+                                    <br>
+
+                                    <h1>Table of Tickets</h1>
+                                    <table border="1" width="600">
+                                    <tr>
+                                    <td>Driver First</td>
+                                    <td>Driver Last</td>
+                                    <td>Date</td>
+                                    <td>Ticket Cost</td>
+                                    <td>Street</td>
+                                    <td>City</td>
+                                    <td>Speed</td>
+                                    </tr>
+                                    
+                                    {% for ticket in our_tickets %}
+                                    <tr>
+                                        <td>{{ ticket.fname }}</td>
+                                        <td>{{ ticket.lname }}</td>
+                                        <td>{{ ticket.date }}</td>
+                                        <td>${{ ticket.amount }}</td>
+                                        <td>{{ ticket.locationStreet }}</td>
+                                        <td>{{ ticket.locationCity }}</td>
+                                        <td>{{ ticket.speedMPH }} MPH</td>
+                                    </tr>
+                                    {% endfor %}
+                                    </table>
+                                                                    <br><br>
+                                    <br><br><a href="{% url 'enterData' %}">Add Another Ticket</a></p>
                                    
                                 </div>
                             </div>
